@@ -1,5 +1,5 @@
 /*!
- * angular-google-staticmaps 0.3.0
+ * angular-google-staticmaps 0.3.1
  * Pascal Hartig, weluse GmbH, http://weluse.de/
  * License: MIT
  */
@@ -58,7 +58,7 @@
         }, '');
       };
     })
-    .directive('staticGmap', function ($parse) {
+    .directive('staticGmap', ['$parse', function ($parse) {
       return {
         template: '<img alt="Google Map">',
         replace: true,
@@ -92,5 +92,5 @@
           })
         }
       };
-    });
+    }]);
 }());
