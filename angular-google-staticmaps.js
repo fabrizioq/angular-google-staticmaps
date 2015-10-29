@@ -1,5 +1,5 @@
 /*!
- * angular-google-staticmaps 0.0.1
+ * angular-google-staticmaps 0.3.0
  * Pascal Hartig, weluse GmbH, http://weluse.de/
  * License: MIT
  */
@@ -86,6 +86,10 @@
           el.width = parseInt(sizeBits[0], 10);
           el.height = parseInt(sizeBits[1], 10);
           el.src = ctrl.buildSourceString(attrs, markers);
+
+          scope.$watch(attrs.markers, function(val) {
+            el.src = ctrl.buildSourceString(attrs, markers);
+          })
         }
       };
     });

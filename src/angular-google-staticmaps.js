@@ -86,6 +86,10 @@
           el.width = parseInt(sizeBits[0], 10);
           el.height = parseInt(sizeBits[1], 10);
           el.src = ctrl.buildSourceString(attrs, markers);
+
+          scope.$watch(attrs.markers, function(val) {
+            el.src = ctrl.buildSourceString(attrs, markers);
+          })
         }
       };
     });
